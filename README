@@ -1,0 +1,39 @@
+# Build Kernel
+ Install gcc-4.7-arm-linux-gnueabihf. Then,
+  $ cd kernel/odrc
+  $ ARCH=arm make odroidc_defconfig
+  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make uImage
+  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make modules
+  $ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make dtbs
+ 
+# Build Android source
+ Continue build with http://source.android.com/source/building-running.html
+  $ source build/envsetup.sh
+  $ lunch odrc-eng
+  $ make
+
+# Prepare sd card
+ Write bl.img
+  $ cd device/aml/odrc/boot
+  $ sudo dd if=bl.img of=/dev/sd? bs=4096
+ Partitions of the card should be set-up like followings.
+  p1 512MB for BOOT : Do fdisk, format as fat32
+  p2 512MB for /system : Do fdisk, new primary partition, size 512M.
+  p3 512MB for /cache  : Do fdisk, format as ext4
+  p4 remainings for /data : Do fdisk, format as ext4
+ 
+# Write system partition
+  $ cd out/target/product/odrc
+  $ sudo dd if=system.img of=/dev/<p2> bs=1M
+
+# Convert ramdisk.img to uInitrd
+  $ cd out/target/product/odrc
+  $ mkimage -A arm -C none -T ramdisk -d ramdisk.img uInitrd
+  
+# Boot partition, kernel & ramdisk
+  
+  device/aml/odrc/boot/boot.ini to p1:/
+  kernel/odrc/arch/arm/boot/uImage to p1:/
+  kernel/odrc/arch/arm/boot/dts/meson8b_odroidc.dtb to p1:/
+  out/target/product/odrc/uInitrd to p1:/
+

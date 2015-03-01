@@ -1,0 +1,16 @@
+# Mali
+/dev/mali                 0666   system     graphics
+/dev/ion                  0666   system     graphics
+
+# Amlogic AV streaming devices
+/dev/amvideo              0666   system     system
+/dev/amstream_vbuf        0666   system     system
+/dev/video0               0666   system     camera
+/dev/video1               0666   system     camera
+/dev/video10              0666   system     system
+/dev/video13              0666   system     system
+/dev/amvenc_avc           0666   system     system
+
+/dev/dvb/adapter0/*       0666   system     system
+
+/dev/rfkill               0664   bluetooth  net_bt_stack
