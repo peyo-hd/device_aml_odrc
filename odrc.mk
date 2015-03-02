@@ -26,7 +26,12 @@ PRODUCT_AAPT_PREF_CONFIG := tvdpi
 include frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk
 
 PRODUCT_PACKAGES += \
-    libGLES_android
+    libEGL_mali \
+    libGLESv1_CM_mali \
+    libGLESv2_mali \
+    egl.cfg \
+    gralloc.$(TARGET_PRODUCT) \
+    hwcomposer.$(TARGET_PRODUCT)
 
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
