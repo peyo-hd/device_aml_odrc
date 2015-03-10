@@ -65,3 +65,9 @@ service iprenew_eth0 /system/bin/dhcpcd -n
     class late_start
     disabled
     oneshot
+
+service resourcemanager /system/bin/resourcemanager
+    class core
+    seclabel u:r:resourcemanager:s0
+    user system
+    group system
