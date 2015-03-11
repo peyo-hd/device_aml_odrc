@@ -33,10 +33,13 @@ PRODUCT_PACKAGES += \
     gralloc.$(TARGET_PRODUCT) \
     hwcomposer.$(TARGET_PRODUCT) \
     audio.primary.$(TARGET_PRODUCT) \
-    libstagefrighthw
+    libstagefrighthw \
+    wpa_supplicant \
+    wpa_supplicant.conf \
 
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf \
     device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
@@ -51,6 +54,8 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
     $(LOCAL_PATH)/set_display_mode.sh:system/bin/set_display_mode.sh \
     kernel/hardware/arm/gpu/mali/mali.ko:root/lib/modules/mali.ko \
+    kernel/hardware/wifi/realtek/drivers/8192cu/rtl8xxx_CU/8192cu.ko:root/lib/modules/8192cu.ko \
+    hardware/amlogic/wifi/rtl8192cu/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(PRODUCT_COPY_FILES)
 
 DEVICE_PACKAGE_OVERLAYS := device/aml/odrc/overlay
