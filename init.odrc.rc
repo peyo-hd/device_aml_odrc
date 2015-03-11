@@ -90,3 +90,8 @@ service resourcemanager /system/bin/resourcemanager
     seclabel u:r:resourcemanager:s0
     user system
     group system
+
+service remotecfg /system/bin/remotecfg /system/etc/remote.conf
+    class main
+    seclabel u:r:remotecfg:s0
+    oneshot

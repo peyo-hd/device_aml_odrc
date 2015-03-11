@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     wpa_supplicant \
     wpa_supplicant.conf \
+    remotecfg
 
 PRODUCT_COPY_FILES := \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
@@ -53,6 +54,7 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/fstab.odrc:root/fstab.odrc \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
     $(LOCAL_PATH)/set_display_mode.sh:system/bin/set_display_mode.sh \
+    $(LOCAL_PATH)/remote.conf:system/etc/remote.conf \
     kernel/hardware/arm/gpu/mali/mali.ko:root/lib/modules/mali.ko \
     kernel/hardware/wifi/realtek/drivers/8192cu/rtl8xxx_CU/8192cu.ko:root/lib/modules/8192cu.ko \
     hardware/amlogic/wifi/rtl8192cu/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
