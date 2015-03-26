@@ -36,6 +36,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     wpa_supplicant \
     wpa_supplicant.conf \
+    TvProvider \
+    TvSettings \
+    TvQuickSettings \
     remotecfg
 
 PRODUCT_COPY_FILES := \
