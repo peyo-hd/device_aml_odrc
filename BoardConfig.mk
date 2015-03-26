@@ -46,3 +46,19 @@ USE_CAMERA_STUB := true
 
 TARGET_RESOURCEMANAGER_LIBS := libgtv_mediaapi
 TARGET_PREBUILT_OMX := true
+
+BOARD_SEPOLICY_DIRS := \
+    device/aml/odrc/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+    file_contexts \
+    service_contexts \
+    device.te \
+    kernel.te \
+    init.te \
+    netd.te \
+    wpa.te \
+    set_display.te \
+    resourcemanager.te \
+    remotecfg.te \
+    untrusted_app.te

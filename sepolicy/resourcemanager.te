@@ -1,0 +1,18 @@
+# resourcemanager service
+type resourcemanager, domain;
+type resourcemanager_exec, file_type, exec_type;
+
+init_daemon_domain(resourcemanager)
+typeattribute resourcemanager mlstrustedsubject;
+
+# Perform Binder IPC to mediaserver
+binder_use(resourcemanager)
+binder_call(resourcemanager, system_server)
+binder_call(resourcemanager, appdomain)
+binder_call(resourcemanager, mediaserver)
+binder_service(resourcemanager)
+
+allow resourcemanager mediaserver_service:service_manager add;
+
+# For /sys/class/display,graphics,vfm
+allow resourcemanager sysfs:file write;

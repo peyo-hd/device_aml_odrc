@@ -1,0 +1,7 @@
+/dev/mali              u:object_r:gpu_device:s0
+/dev/rfkill            u:object_r:rfkill_device:s0
+/dev/amvideo           u:object_r:video_device:s0
+/dev/amstream_vbuf     u:object_r:video_device:s0
+/dev/amremote          u:object_r:remote_device:s0
+/system/bin/resourcemanager  u:object_r:resourcemanager_exec:s0
+/system/bin/remotecfg  u:object_r:remotecfg_exec:s0

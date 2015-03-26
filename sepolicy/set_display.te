@@ -1,0 +1,16 @@
+# set_display processes and scripts (system process)
+type set_display, domain;
+type set_display_exec, file_type, exec_type;
+
+init_daemon_domain(set_display)
+
+# Run set_display.sh
+allow set_display shell_exec:file { entrypoint read };
+allow set_display set_display_exec:file rx_file_perms;
+
+# Allow executing files on system, such as:
+#   /system/bin/toolbox
+allow set_display system_file:file execute_no_trans;
+
+# For /sys/class/display,graphics,vfm
+allow set_display sysfs:file {write setattr};

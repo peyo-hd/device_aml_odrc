@@ -28,3 +28,7 @@ echo 0x10001 > /sys/class/graphics/fb0/free_scale
 echo 0 > /sys/class/graphics/fb1/free_scale
 echo rm default > /sys/class/vfm/map
 echo add default decoder ionvideo > /sys/class/vfm/map
+
+chmod 666 /sys/class/vfm/map
+chmod 666 /sys/class/graphics/fb0/blank
+chmod 666 /sys/class/graphics/fb1/blank

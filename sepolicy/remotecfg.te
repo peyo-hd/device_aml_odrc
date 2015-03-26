@@ -1,0 +1,6 @@
+type remotecfg, domain;
+type remotecfg_exec, file_type, exec_type;
+
+init_daemon_domain(remotecfg)
+
+allow remotecfg remote_device:chr_file rw_file_perms;
