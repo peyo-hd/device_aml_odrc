@@ -1,0 +1,2 @@
+allow system_server fuse:dir search;
+allow system_server self:capability sys_module;

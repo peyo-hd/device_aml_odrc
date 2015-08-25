@@ -1,0 +1,2 @@
+allow mediaserver system_file:file execmod;
+allow mediaserver amvideo_device:chr_file rw_file_perms;
