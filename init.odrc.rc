@@ -9,6 +9,10 @@ on init
     symlink /storage/self/primary /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/self/primary
 
+    write /sys/kernel/mm/ksm/pages_to_scan 100
+    write /sys/kernel/mm/ksm/sleep_millisecs 500
+    write /sys/kernel/mm/ksm/run 1
+
 on fs
     mount_all /fstab.odrc
     setprop ro.crypto.state unencrypted
