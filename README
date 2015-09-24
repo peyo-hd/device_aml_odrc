@@ -22,7 +22,7 @@
   p3 512MB for /cache  : Do fdisk, format as ext4
   p4 remainings for /data : Do fdisk, format as ext4
  Set volume label for each partition - system, cache, userdata
-  : use -L option of mkfs.ext4, or e2label command.
+  : use -L option of mkfs.ext4, e2label command, or -n option of mkfs.vfat
  
 # Write system partition
   $ cd out/target/product/odrc
