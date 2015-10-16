@@ -54,7 +54,6 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_PATH)/odrc_core_hardware.xml:system/etc/permissions/odrc_core_hardware.xml \
     $(LOCAL_PATH)/init.odrc.rc:root/init.odrc.rc \
     $(LOCAL_PATH)/ueventd.odrc.rc:root/ueventd.odrc.rc \
-    $(LOCAL_PATH)/ueventd.rc:root/ueventd.rc \
     $(LOCAL_PATH)/fstab.odrc:root/fstab.odrc \
     $(LOCAL_PATH)/Generic.kl:system/usr/keylayout/Generic.kl \
     $(LOCAL_PATH)/set_display_mode.sh:system/bin/set_display_mode.sh \
